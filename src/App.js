@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
-import AddFavourite from "./components/AddFavourties";
+import AddFavourite from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
 
 const App = () => {
@@ -48,7 +47,7 @@ const App = () => {
 
   const removeFavouriteMovie = (movie) => {
     const newFavouriteList = favourites.filter(
-      (favourite) => favourite.imdbID != movie.imdbID
+      (favourite) => favourite.imdbID !== movie.imdbID
     );
     setFavourites(newFavouriteList);
     addToLocalStorage(newFavouriteList);
